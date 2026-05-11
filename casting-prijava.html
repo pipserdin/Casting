@@ -1,62 +1,63 @@
+
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prijava za casting — CESI</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #f0f0f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; padding: 2rem 1rem; min-height: 100vh; }
-    .cf-wrap { max-width: 580px; margin: 0 auto; background: #e8e8e8; border-radius: 24px; padding: 1.5rem 1.5rem 2rem; }
-    .cf-header { padding: 2rem 1.5rem 1.5rem; margin-bottom: 1.5rem; text-align: center; }
-    .cf-title { font-size: 26px; font-weight: 500; color: #1a1a1a; margin: 0 0 6px; }
-    .cf-sub { font-size: 14px; color: #555; }
-    .cf-section { background: #fff; border-radius: 16px; padding: 1.25rem 1.25rem 1rem; margin-bottom: 1rem; }
-    .cf-section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px; padding: 4px 12px; border-radius: 20px; display: inline-block; }
-    .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    @media (max-width: 420px) { .cf-row { grid-template-columns: 1fr; } }
-    .cf-field { margin-bottom: 10px; }
-    .cf-field label { font-size: 12px; color: #666; display: block; margin-bottom: 4px; font-weight: 500; }
-    .cf-field input[type=text] { width: 100%; border-radius: 10px; border: 2px solid #eee; padding: 9px 12px; font-size: 14px; outline: none; background: #fafafa; color: #1a1a1a; transition: border-color 0.15s; }
-    .cf-field input[type=text]:focus { border-color: #aaa; background: #fff; }
-    .cf-radio-group { display: flex; gap: 10px; margin-top: 4px; }
-    .cf-radio-btn { flex: 1; border: 2px solid #ccc; border-radius: 10px; padding: 9px; text-align: center; font-size: 14px; cursor: pointer; background: #fafafa; color: #555; transition: all 0.15s; user-select: none; }
-    .cf-radio-btn.active { background: #444; color: #fff; border-color: #444; }
-    .cf-checkbox-group { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
-    .cf-checkbox-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border: 2px solid #eee; border-radius: 10px; cursor: pointer; background: #fafafa; transition: all 0.15s; }
-    .cf-checkbox-item:hover { border-color: #ccc; background: #f0f0f0; }
-    .cf-checkbox-item.checked { border-color: #444; background: #f0f0f0; }
-    .cf-checkbox-item input[type=checkbox] { margin-top: 2px; flex-shrink: 0; accent-color: #444; width: 15px; height: 15px; cursor: pointer; }
-    .cf-role-name { font-size: 13px; font-weight: 500; color: #1a1a1a; }
-    .cf-role-desc { font-size: 12px; color: #666; margin-top: 1px; }
-    .cf-upload-area { border: 2px dashed #ccc; border-radius: 12px; padding: 1.5rem; text-align: center; background: #fafafa; cursor: pointer; transition: all 0.15s; }
-    .cf-upload-area:hover { border-color: #aaa; background: #f0f0f0; }
-    .cf-upload-area.uploading { border-color: #2166b8; background: #eef3fc; }
-    .cf-upload-area.done { border-color: #3aaa48; background: #edfaf0; }
-    .cf-upload-area p { font-size: 13px; color: #888; margin: 0 0 8px; }
-    .cf-upload-area input[type=file] { display: none; }
-    .cf-upload-btn { font-size: 13px; color: #2166b8; cursor: pointer; text-decoration: underline; }
-    .cf-upload-status { font-size: 13px; margin-top: 6px; }
-    .cf-privola-box { border-radius: 12px; padding: 0.85rem 1rem; margin-bottom: 10px; font-size: 13px; line-height: 1.6; background: #f4f4f4; color: #333; }
-    .cf-check-row { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: #444; cursor: pointer; }
-    .cf-check-row input { margin-top: 2px; flex-shrink: 0; accent-color: #444; }
-    .cf-submit-section { background: #333; border-radius: 16px; padding: 1.25rem; }
-    .cf-btn { width: 100%; border-radius: 12px; border: none; padding: 15px; font-size: 17px; font-weight: 500; color: #fff; cursor: pointer; background: #0c3060; display: block; transition: background 0.15s; }
-    .cf-btn:hover { background: #185099; }
-    .cf-btn:disabled { background: #666; cursor: not-allowed; }
-    .cf-rainbow { height: 5px; background: linear-gradient(90deg,#e8312f,#e8832f,#f5d020,#8dc63f,#3aaa48,#2166b8,#6b3fa0,#c0392b); border-radius: 0 0 12px 12px; margin-top: 8px; }
-    .cf-success { display: none; text-align: center; padding: 2.5rem; background: #fff; border-radius: 16px; }
-    .cf-success h2 { font-size: 22px; font-weight: 500; color: #1a1a1a; margin-bottom: 8px; }
-    .cf-success p { font-size: 14px; color: #555; }
-    .cf-hidden { display: none !important; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prijava za casting — CESI</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f0f0f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; padding: 2rem 1rem; min-height: 100vh; }
+.cf-wrap { max-width: 580px; margin: 0 auto; background: #e8e8e8; border-radius: 24px; padding: 1.5rem 1.5rem 2rem; }
+.cf-header { padding: 2rem 1.5rem 1.5rem; margin-bottom: 1.5rem; text-align: center; }
+.cf-title { font-size: 26px; font-weight: 500; color: #1a1a1a; margin: 0 0 6px; }
+.cf-sub { font-size: 14px; color: #555; }
+.cf-section { background: #fff; border-radius: 16px; padding: 1.25rem 1.25rem 1rem; margin-bottom: 1rem; }
+.cf-section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px; padding: 4px 12px; border-radius: 20px; display: inline-block; }
+.cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 420px) { .cf-row { grid-template-columns: 1fr; } }
+.cf-field { margin-bottom: 10px; }
+.cf-field label { font-size: 12px; color: #666; display: block; margin-bottom: 4px; font-weight: 500; }
+.cf-field input[type=text] { width: 100%; border-radius: 10px; border: 2px solid #eee; padding: 9px 12px; font-size: 14px; outline: none; background: #fafafa; color: #1a1a1a; transition: border-color 0.15s; }
+.cf-field input[type=text]:focus { border-color: #aaa; background: #fff; }
+.cf-radio-group { display: flex; gap: 10px; margin-top: 4px; }
+.cf-radio-btn { flex: 1; border: 2px solid #ccc; border-radius: 10px; padding: 9px; text-align: center; font-size: 14px; cursor: pointer; background: #fafafa; color: #555; transition: all 0.15s; user-select: none; }
+.cf-radio-btn.active { background: #444; color: #fff; border-color: #444; }
+.cf-checkbox-group { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.cf-checkbox-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border: 2px solid #eee; border-radius: 10px; cursor: pointer; background: #fafafa; transition: all 0.15s; }
+.cf-checkbox-item:hover { border-color: #ccc; background: #f0f0f0; }
+.cf-checkbox-item.checked { border-color: #444; background: #f0f0f0; }
+.cf-checkbox-item input[type=checkbox] { margin-top: 2px; flex-shrink: 0; accent-color: #444; width: 15px; height: 15px; cursor: pointer; }
+.cf-role-name { font-size: 13px; font-weight: 500; color: #1a1a1a; }
+.cf-role-desc { font-size: 12px; color: #666; margin-top: 1px; }
+.cf-upload-area { border: 2px dashed #ccc; border-radius: 12px; padding: 1.5rem; text-align: center; background: #fafafa; cursor: pointer; transition: all 0.15s; }
+.cf-upload-area:hover { border-color: #aaa; background: #f0f0f0; }
+.cf-upload-area.uploading { border-color: #2166b8; background: #eef3fc; }
+.cf-upload-area.done { border-color: #3aaa48; background: #edfaf0; }
+.cf-upload-area p { font-size: 13px; color: #888; margin: 0 0 8px; }
+.cf-upload-area input[type=file] { display: none; }
+.cf-upload-btn { font-size: 13px; color: #2166b8; cursor: pointer; text-decoration: underline; }
+.cf-upload-status { font-size: 13px; margin-top: 6px; }
+.cf-privola-box { border-radius: 12px; padding: 0.85rem 1rem; margin-bottom: 10px; font-size: 13px; line-height: 1.6; background: #f4f4f4; color: #333; }
+.cf-check-row { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: #444; cursor: pointer; }
+.cf-check-row input { margin-top: 2px; flex-shrink: 0; accent-color: #444; }
+.cf-submit-section { background: #333; border-radius: 16px; padding: 1.25rem; }
+.cf-btn { width: 100%; border-radius: 12px; border: none; padding: 15px; font-size: 17px; font-weight: 500; color: #fff; cursor: pointer; background: #0c3060; display: block; transition: background 0.15s; }
+.cf-btn:hover { background: #185099; }
+.cf-btn:disabled { background: #666; cursor: not-allowed; }
+.cf-rainbow { height: 5px; background: linear-gradient(90deg,#e8312f,#e8832f,#f5d020,#8dc63f,#3aaa48,#2166b8,#6b3fa0,#c0392b); border-radius: 0 0 12px 12px; margin-top: 8px; }
+.cf-success { display: none; text-align: center; padding: 2.5rem; background: #fff; border-radius: 16px; }
+.cf-success h2 { font-size: 22px; font-weight: 500; color: #1a1a1a; margin-bottom: 8px; }
+.cf-success p { font-size: 14px; color: #555; }
+.cf-hidden { display: none !important; }
+</style>
 </head>
 <body>
 
 <div class="cf-wrap">
   <div class="cf-header">
-    <h1 class="cf-title">Prijava za casting</h1>
-    <p class="cf-sub">CESI &mdash; Lokacija: Bjelovar</p>
+    <h1 class="cf-title">Prijava za casting &#127916;</h1>
+    <p class="cf-sub">Kratki edukativni film &mdash; Lokacija: Gimnazija Bjelovar</p>
   </div>
 
   <div id="main-form">
@@ -86,9 +87,9 @@
     </div>
 
     <div class="cf-section" style="border: 2px solid #e8e8e8;">
-      <div class="cf-section-label" style="background:#555; color:#fff;">Spol i uloga</div>
+      <div class="cf-section-label" style="background:#555; color:#fff;">Uloga</div>
       <div class="cf-field">
-        <label>Spol *</label>
+        <label>Odaberi *</label>
         <div class="cf-radio-group">
           <div class="cf-radio-btn" id="btn-m" onclick="selectSpol('m')">Muško</div>
           <div class="cf-radio-btn" id="btn-z" onclick="selectSpol('z')">Žensko</div>
@@ -101,7 +102,7 @@
     </div>
 
     <div class="cf-section" style="border: 2px solid #d9f0e8;">
-      <div class="cf-section-label" style="background:#3aaa48; color:#fff;">Fotografija</div>
+      <div class="cf-section-label" style="background:#3aaa48; color:#fff;">Fotografija *</div>
       <div class="cf-upload-area" id="upload-area" onclick="document.getElementById('foto-input').click()">
         <p>Dodaj svoju fotografiju</p>
         <span class="cf-upload-btn">Odaberi datoteku</span>
@@ -130,7 +131,6 @@
 
   <div class="cf-success" id="success-msg">
     <h2>✓ Hvala na prijavi!</h2>
-    <p>Javit ćemo se uskoro s više informacija.</p>
   </div>
 
 </div>
@@ -225,6 +225,7 @@
     if (!ime || !prezime || !skola || !razred) { alert('Molimo ispuni sve osobne podatke.'); return; }
     if (!spolOdabran) { alert('Molimo odaberi spol.'); return; }
     if (odabraneUloge.length === 0) { alert('Molimo odaberi barem jednu ulogu.'); return; }
+    if (!fotoUrl) { alert('Molimo dodaj fotografiju.'); return; }
     if (!privola) { alert('Molimo potvrdi da si svjestan/svjesna obaveze dostave privole.'); return; }
 
     const btn = document.getElementById('submit-btn');
