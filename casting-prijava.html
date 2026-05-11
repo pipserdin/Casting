@@ -111,6 +111,20 @@ body { background: #f0f0f0; font-family: -apple-system, BlinkMacSystemFont, 'Seg
       </div>
     </div>
 
+    <div class="cf-section" style="border: 2px solid #f0e8f8;">
+      <div class="cf-section-label" style="background:#6b3fa0; color:#fff;">Kontakt podaci</div>
+      <div class="cf-row">
+        <div class="cf-field">
+          <label>E-mail adresa *</label>
+          <input type="text" id="email" placeholder="tvoj@email.com" />
+        </div>
+        <div class="cf-field">
+          <label>Broj mobitela *</label>
+          <input type="text" id="mobitel" placeholder="npr. 091 234 5678" />
+        </div>
+      </div>
+    </div>
+
     <div class="cf-section" style="border: 2px solid #dde8f8;">
       <div class="cf-section-label" style="background:#2166b8; color:#fff;">Privola</div>
       <div class="cf-privola-box">
@@ -220,12 +234,15 @@ body { background: #f0f0f0; font-family: -apple-system, BlinkMacSystemFont, 'Seg
     const prezime = document.getElementById('prezime').value.trim();
     const skola = document.getElementById('skola').value.trim();
     const razred = document.getElementById('razred').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mobitel = document.getElementById('mobitel').value.trim();
     const privola = document.getElementById('privola').checked;
 
     if (!ime || !prezime || !skola || !razred) { alert('Molimo ispuni sve osobne podatke.'); return; }
     if (!spolOdabran) { alert('Molimo odaberi spol.'); return; }
     if (odabraneUloge.length === 0) { alert('Molimo odaberi barem jednu ulogu.'); return; }
     if (!fotoUrl) { alert('Molimo dodaj fotografiju.'); return; }
+    if (!email || !mobitel) { alert('Molimo ispuni e-mail adresu i broj mobitela.'); return; }
     if (!privola) { alert('Molimo potvrdi da si svjestan/svjesna obaveze dostave privole.'); return; }
 
     const btn = document.getElementById('submit-btn');
@@ -233,7 +250,7 @@ body { background: #f0f0f0; font-family: -apple-system, BlinkMacSystemFont, 'Seg
     btn.textContent = 'Šaljem...';
 
     const payload = {
-      ime, prezime, skola, razred,
+      ime, prezime, skola, razred, email, mobitel,
       spol: spolOdabran === 'm' ? 'Muško' : 'Žensko',
       uloge: odabraneUloge.join(', '),
       fotografija: fotoUrl || 'Nije uploadana'
